@@ -25,7 +25,7 @@ EOF
 mkfs.fat -F 32 /dev/sda1
 mount /dev/sda2 /mnt
 mount --mkdir /dev/sda1 /mnt/boot
-pacstrap /mnt base base-devel linux linux-firmware networkmanager vim man-db man-pages texinfo intel-ucode grub efibootmgr xorg-server i3-gaps rofi dmenu firefox alacritty ranger lightdm lightdm-gtk-greeter i3status neofetch git discord pulseaudio pavucontrol nitrogen picom os-prober deepin-screenshot zsh btop gtk3 lxappearance ttf-iosevka-nerd
+pacstrap /mnt base base-devel linux linux-firmware networkmanager vim man-db man-pages texinfo intel-ucode grub efibootmgr xorg-server i3-gaps rofi dmenu firefox alacritty ranger lightdm lightdm-gtk-greeter i3status neofetch git discord pulseaudio pavucontrol nitrogen picom os-prober deepin-screenshot zsh gtk3 lxappearance ttf-iosevka-nerd
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "root:$1" >> /mnt/pass.txt
 echo "sebastian:$2" >> /mnt/pass.txt
