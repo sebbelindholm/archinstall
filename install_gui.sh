@@ -45,7 +45,6 @@ END
 cat >> /etc/hostname << "END"
 arch-desktop
 END
-ln -sf /home/sebastian/github/dotfiles/grub/sleek /usr/share/grub/themes
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 cat >> /etc/default/grub << "END"
 GRUB_DISABLE_OS_PROBER=false
