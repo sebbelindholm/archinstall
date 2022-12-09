@@ -80,5 +80,3 @@ EOF
 sed -n '$d' /mnt/etc/sudoers
 sed -n '$d' /mnt/etc/sudoers
 echo "%wheel ALL=(ALL:ALL) ALL" >> /mnt/etc/sudoers
-arch-chroot /mnt /bin/bash << "EOF"
-EOF
