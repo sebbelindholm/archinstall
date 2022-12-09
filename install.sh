@@ -25,7 +25,7 @@ EOF
 mkfs.fat -F 32 /dev/nvme1n1p1
 mount /dev/nvme1n1p2 /mnt
 mount --mkdir /dev/nvme1n1p1 /mnt/boot
-pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring grub efibootmgr
+pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring grub efibootmgr git
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "root:$1" >> /mnt/pass.txt
 echo "sebastian:$2" >> /mnt/pass.txt
