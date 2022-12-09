@@ -36,6 +36,11 @@ bluez
 bluez-utils
 blueman-applet
 
+#Dependencies for sddm
+qt5-graphicaleffects
+qt5-quickcontrols2
+qt5-svg
+
 #Rice
 dunst
 polybar

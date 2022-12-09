@@ -68,10 +68,15 @@ mkdir Documents
 cd github
 git clone https://github.com/sebbelindholm/arch-install-script.git
 pacman -S - < packages.txt
+sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
+sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 cd /home/sebastian
 git clone https://www.github.com/sebbelindholm/dotfiles.git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo "[Theme]
+Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
 EOF
+
 sed -n '$d' /mnt/etc/sudoers
 sed -n '$d' /mnt/etc/sudoers
 echo "%wheel ALL=(ALL:ALL) ALL" >> /mnt/etc/sudoers
