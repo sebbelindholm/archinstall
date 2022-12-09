@@ -47,6 +47,5 @@ zip
 unzip
 gnome-screenshot
 gnome-keyring
-ttf-iosevka-nerd
 ttf-ubuntu-font-family
 ttf-jetbrains-mono
