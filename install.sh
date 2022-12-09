@@ -69,11 +69,13 @@ sudo pacman -S - < packages.txt
 sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 cd /home/sebastian
-git clone https://www.github.com/sebbelindholm/dotfiles.git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
-systemctl enable Networkmanager
+git clone --bare https://github.com/sebbelindholm/dotfiles.git $HOME/.cfg
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+config checkout
+systemctl enable NetworkManager
 systemctl enable sddm
 EOF
 
