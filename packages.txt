@@ -29,7 +29,6 @@ piper
 blueman
 bluez
 bluez-utils
-blueman-applet
 qt5-graphicaleffects
 qt5-quickcontrols2
 qt5-svg
@@ -40,7 +39,7 @@ rofi
 nitrogen
 picom
 network-manager-applet
-disocrd
+discord
 pavucontrol
 btop
 lxappearance
