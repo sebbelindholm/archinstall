@@ -58,7 +58,6 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 rm -rf yay
-yay -S --noconfirm google-chrome nerd-fonts-complete rofi-wifi-menu-git shell-color-scripts spotify minecraft-launcher
 mkdir github
 mkdir Downloads
 mkdir Pictures
@@ -66,7 +65,7 @@ mkdir Documents
 cd github
 git clone https://github.com/sebbelindholm/arch-install-script.git
 cd arch-install-script
-pacman -S - < packages.txt
+sudo pacman -S - < packages.txt
 sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 cd /home/sebastian
