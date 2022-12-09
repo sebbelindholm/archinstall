@@ -29,6 +29,7 @@ pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring grub efiboo
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "root:$1" >> /mnt/pass.txt
 echo "sebastian:$2" >> /mnt/pass.txt
+cp git-checkout.sh /mnt
 arch-chroot /mnt /bin/bash << "EOF"
 ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 hwclock --systohc
@@ -72,12 +73,11 @@ cd /home/sebastian
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
-git clone --bare https://github.com/sebbelindholm/dotfiles.git $HOME/.cfg
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-source /home/sebastian/.bashrc
-config checkout
+/git-checkout.sh
+sudo rm /git-checkout.sh
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
+sudo systemctl --user enable emacs
 EOF
 
 sed -n '$d' /mnt/etc/sudoers
