@@ -73,8 +73,8 @@ git clone https://www.github.com/sebbelindholm/dotfiles.git
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
-systemctl enable Networkmanager
-systemctl enable sddm
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
 EOF
 
 sed -n '$d' /mnt/etc/sudoers
