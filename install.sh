@@ -65,6 +65,7 @@ mkdir Pictures
 mkdir Documents
 cd github
 git clone https://github.com/sebbelindholm/arch-install-script.git
+cd arch-install-script
 pacman -S - < packages.txt
 sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
