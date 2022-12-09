@@ -74,9 +74,10 @@ echo "[Theme]
 Current=sddm-astronaut-theme" | sudo tee /etc/sddm.conf
 git clone --bare https://github.com/sebbelindholm/dotfiles.git $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+source /home/sebastian/.bashrc
 config checkout
-systemctl enable NetworkManager
-systemctl enable sddm
+sudo systemctl enable NetworkManager
+sudo systemctl enable sddm
 EOF
 
 sed -n '$d' /mnt/etc/sudoers
