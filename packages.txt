@@ -1,6 +1,3 @@
-#yay -S --noconfirm google-chrome nerd-fonts-complete rofi-wifi-menu-git shell-color-scripts spotify minecraft-launcher
-
-#Basic package must haves
 git
 vim
 emacs
@@ -15,14 +12,10 @@ gcc
 exa
 curl
 wget
-
-#Shell
 zsh
 zsh-syntax-highlighting
 zsh-completions
 starship
-
-#"Drivers"
 nvidia
 nvidia-settings
 pipewire
@@ -37,13 +30,9 @@ blueman
 bluez
 bluez-utils
 blueman-applet
-
-#Dependencies for sddm
 qt5-graphicaleffects
 qt5-quickcontrols2
 qt5-svg
-
-#Rice
 dunst
 polybar
 neofetch
@@ -51,9 +40,6 @@ rofi
 nitrogen
 picom
 network-manager-applet
-
-
-#Applications
 disocrd
 pavucontrol
 btop
@@ -62,8 +48,6 @@ zip
 unzip
 gnome-screenshot
 gnome-keyring
-
-#Fonts
 ttf-iosevka-nerd
 ttf-ubuntu-font-family
 ttf-jetbrains-mono
