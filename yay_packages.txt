@@ -1,0 +1,3 @@
+nerd-fonts-complete 
+google-chrome 
+minecraft-launcher
