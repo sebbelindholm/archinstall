@@ -25,7 +25,13 @@ EOF
 mkfs.fat -F 32 /dev/nvme1n1p1
 mount /dev/nvme1n1p2 /mnt
 mount --mkdir /dev/nvme1n1p1 /mnt/boot
+rm -rf /etc/pacman.conf
+cp pacman.conf /etc/
 pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring grub efibootmgr git
+rm -rf /mnt/etc/pacman.conf
+cp pacman.conf /mnt/etc/pacman.conf
+mount --mkdir /dev/nvme0n1p1 /mnt/mnt/nvme1TB
+mount --mkdir /dev/sda1 /mnt/mnt/3TB
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "root:$1" >> /mnt/pass.txt
 echo "sebastian:$2" >> /mnt/pass.txt
@@ -59,6 +65,7 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 rm -rf yay
+yay --noconfirm -S nerd-fonts-complete google-chrome minecraft-launcher spotify
 mkdir github
 mkdir Downloads
 mkdir Pictures
@@ -66,7 +73,7 @@ mkdir Documents
 cd github
 git clone https://github.com/sebbelindholm/arch-install-script.git
 cd arch-install-script
-sudo pacman -S - < packages.txt
+sudo pacman --noconfirm -Syu - < packages.txt
 sudo git clone https://github.com/keyitdev/sddm-astronaut-theme.git /usr/share/sddm/themes/sddm-astronaut-theme
 sudo cp /usr/share/sddm/themes/sddm-astronaut-theme/Fonts/* /usr/share/fonts/
 cd /home/sebastian
@@ -78,6 +85,7 @@ sudo rm /git-checkout.sh
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 sudo systemctl --user enable emacs
+chsh -s /usr/bin/zsh
 EOF
 
 sed -n '$d' /mnt/etc/sudoers
