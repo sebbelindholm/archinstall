@@ -30,6 +30,7 @@ cp pacman.conf /etc/
 pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring grub efibootmgr git
 rm -rf /mnt/etc/pacman.conf
 cp pacman.conf /mnt/etc/pacman.conf
+cp xorg.conf /mnt/etc/X11/
 mount --mkdir /dev/nvme0n1p1 /mnt/mnt/nvme1TB
 mount --mkdir /dev/sda1 /mnt/mnt/3TB
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -65,8 +66,10 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 rm -rf yay
-yay --noconfirm -S - < yay_packages.txt
+yay --noconfirm -S nerd-fonts-complete google-chrome shell-color-scripts
 mkdir github
+mkdir github/cloned-repos
+mkdir github/personal-repos
 mkdir Downloads
 mkdir Pictures
 mkdir Documents
@@ -85,7 +88,7 @@ sudo rm /git-checkout.sh
 sudo systemctl enable NetworkManager
 sudo systemctl enable sddm
 sudo systemctl --user enable emacs
-chsh -s /usr/bin/zsh
+sudo chsh -s /usr/bin/zsh
 EOF
 
 sed -n '$d' /mnt/etc/sudoers

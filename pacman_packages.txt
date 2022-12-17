@@ -1,3 +1,4 @@
+feh
 git
 vim
 emacs
@@ -36,7 +37,6 @@ dunst
 polybar
 neofetch
 rofi
-nitrogen
 picom
 network-manager-applet
 discord
