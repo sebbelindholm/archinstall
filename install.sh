@@ -16,7 +16,7 @@ mount --mkdir /dev/sda1 /mnt/hdd
 
 rm -rf /etc/pacman.conf
 cp pacman.conf /etc/
-pacstrap /mnt linux base base-devel linux-firmware archlinux-keyring xdg-user-dirs
+pacstrap -K /mnt linux base base-devel linux-firmware archlinux-keyring xdg-user-dirs
 rm -rf /mnt/etc/pacman.conf
 cp pacman.conf /mnt/etc/pacman.conf
 
