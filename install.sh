@@ -46,6 +46,7 @@ chpasswd < pass.txt
 rm -rf pass.txt
 echo "%wheel ALL=(ALL:ALL) NOPASSWD :ALL" >> /etc/sudoers
 su sebastian
+sudo pacman --noconfirm -Syu - < pacman_packages.txt
 cd /home/sebastian
 git clone https://aur.archlinux.org/yay.git
 cd yay
@@ -59,7 +60,6 @@ mkdir Github/Cloned
 cd Github/Personal
 git clone https://github.com/sebbelindholm/arch-install-script.git
 cd arch-install-script
-sudo pacman --noconfirm -Syu - < pacman_packages.txt
 cd /home/sebastian
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo systemctl enable NetworkManager
