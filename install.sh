@@ -7,7 +7,7 @@ sgdisk /dev/nvme1n1 -o
 sgdisk /dev/nvme1n1 -n 1::+512MiB -t 1:ef00
 sgdisk /dev/nvme1n1 -n 2
 mkfs.vfat -F32 /dev/nvme1n1p1
-mkfs.ext4  -q /dev/nvme1n1p2
+mkfs.ext4  -F /dev/nvme1n1p2
 
 mount /dev/nvme1n1p2 /mnt
 mount --mkdir /dev/nvme1n1p1 /mnt/boot
