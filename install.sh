@@ -46,6 +46,12 @@ chpasswd < pass.txt
 rm -rf pass.txt
 echo "%wheel ALL=(ALL:ALL) NOPASSWD :ALL" >> /etc/sudoers
 su sebastian
+xdg-user-dirs-update
+mkdir Github
+mkdir Github/Personal
+mkdir Github/Cloned
+cd Github/Personal
+git clone https://github.com/sebbelindholm/arch-install-script.git
 sudo pacman --noconfirm -Syu - < /home/sebastian/Github/personal/arch-install-script/pacman_packages.txt
 cd /home/sebastian
 git clone https://aur.archlinux.org/yay.git
@@ -53,13 +59,6 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 rm -rf yay
-xdg-user-dirs-update
-mkdir Github
-mkdir Github/Personal
-mkdir Github/Cloned
-cd Github/Personal
-git clone https://github.com/sebbelindholm/arch-install-script.git
-cd arch-install-script
 cd /home/sebastian
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo systemctl enable NetworkManager
