@@ -61,7 +61,6 @@ makepkg -si --noconfirm
 cd ..
 rm -rf yay
 cd /home/sebastian
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 sudo systemctl enable NetworkManager
 sudo systemctl --user enable emacs
 EOF
