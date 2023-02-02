@@ -53,7 +53,7 @@ mkdir Github/Personal
 mkdir Github/Cloned
 cd Github/Personal
 git clone https://github.com/sebbelindholm/arch-install-script.git
-sudo pacman --noconfirm -Syu - < /home/sebastian/Github/personal/arch-install-script/pacman_packages.txt
+sudo pacman --noconfirm -Syu - < /home/sebastian/Github/Personal/arch-install-script/pacman_packages.txt
 cd /home/sebastian
 git clone https://aur.archlinux.org/yay.git
 cd yay
