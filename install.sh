@@ -46,6 +46,7 @@ chpasswd < pass.txt
 rm -rf pass.txt
 echo "%wheel ALL=(ALL:ALL) NOPASSWD :ALL" >> /etc/sudoers
 su sebastian
+cd /home/sebastian
 xdg-user-dirs-update
 mkdir Github
 mkdir Github/Personal
