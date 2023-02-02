@@ -13,7 +13,7 @@ xorg-xinit
 curl
 wget
 starship
-intel-ucode 
+intel-ucode
 networkmanager
 min
 pipewire

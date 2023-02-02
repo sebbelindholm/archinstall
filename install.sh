@@ -25,6 +25,9 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo "root:$1" >> /mnt/pass.txt
 echo "sebastian:$2" >> /mnt/pass.txt
 
+cp arch.conf /mnt
+cp arch-fallback.conf /mnt
+
 arch-chroot /mnt /bin/bash << "EOF"
 ln -sf /usr/share/zoneinfo/Europe/Stockholm /etc/localtime
 hwclock --systohc
@@ -41,6 +44,10 @@ END
 cat >> /etc/hostname << "END"
 arch-desktop
 END
+bootctl install
+e2label /dev/nvme1n1p2 "arch_os"
+mv arch.conf /boot/loader/entries
+mv arch-fallback.conf /boot/loader/entries
 useradd -g wheel -m sebastian
 chpasswd < pass.txt
 rm -rf pass.txt
