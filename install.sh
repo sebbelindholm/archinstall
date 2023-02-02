@@ -46,7 +46,7 @@ chpasswd < pass.txt
 rm -rf pass.txt
 echo "%wheel ALL=(ALL:ALL) NOPASSWD :ALL" >> /etc/sudoers
 su sebastian
-sudo pacman --noconfirm -Syu - < pacman_packages.txt
+sudo pacman --noconfirm -Syu - < /home/sebastian/Github/personal/arch-install-script/pacman_packages.txt
 cd /home/sebastian
 git clone https://aur.archlinux.org/yay.git
 cd yay
