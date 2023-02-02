@@ -54,7 +54,7 @@ mkdir Github/Cloned
 cd Github/Personal
 git clone https://github.com/sebbelindholm/arch-install-script.git
 cd arch-install-script
-sudo pacman --noconfirm -Syu < pacman_packages.txt
+sudo pacman --noconfirm -Syu - < pacman_packages.txt
 cd /home/sebastian
 git clone https://aur.archlinux.org/yay.git
 cd yay
