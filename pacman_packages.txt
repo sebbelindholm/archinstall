@@ -15,9 +15,9 @@ starship
 intel-ucode
 networkmanager
 min
-pipewire
-wireplumber
-pipewire-pulse
-pipewire-alsa
+pulseaudio
+pulseaudio-alsa
+pulseaudio-jack
+pavucontrol
 openssh
 zsh
